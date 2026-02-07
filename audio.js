@@ -2,7 +2,14 @@ class AudioManager {
     constructor() {
         this.ctx = new (window.AudioContext || window.webkitAudioContext)();
         this.synth = window.speechSynthesis;
-        this.enabled = true;
+        this.enabled = localStorage.getItem('sfx_enabled') !== 'false';
+    }
+
+    toggle() {
+        this.enabled = !this.enabled;
+        localStorage.setItem('sfx_enabled', this.enabled);
+        if (this.synth) this.synth.cancel();
+        return this.enabled;
     }
 
     // Generate a simple oscillator tone

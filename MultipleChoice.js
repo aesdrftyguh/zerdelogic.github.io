@@ -52,6 +52,7 @@ class MultipleChoiceTemplate {
         questionText.style.color = '#0f766e';
         questionText.style.textAlign = 'center';
         questionText.style.lineHeight = '1.4';
+        questionText.style.whiteSpace = 'pre-line'; // Support \n
         questionCard.appendChild(questionText);
 
         // Options Container
@@ -121,7 +122,7 @@ class MultipleChoiceTemplate {
 
         document.querySelectorAll('.mc-option').forEach(el => el.style.pointerEvents = 'none');
 
-        setTimeout(() => this.onSuccess(), 1000);
+        setTimeout(() => this.onSuccess(btn), 1000);
     }
 
     handleWrong(btn) {

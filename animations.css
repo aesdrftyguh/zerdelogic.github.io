@@ -135,3 +135,35 @@
         filter: brightness(1.5) drop-shadow(0 0 20px gold);
     }
 }
+
+@keyframes thinking {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+@keyframes happy-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-30px) scale(1.1);
+    }
+}
+
+.thinking-anim {
+    animation: thinking 2s ease-in-out infinite;
+}
+
+.happy-anim {
+    animation: happy-bounce 0.5s ease-in-out 2;
+}

@@ -26,7 +26,20 @@ class TaskRunner {
             'mathcomparison': MathComparisonTemplate,
             'mathmissing': MathMissingTemplate,
             'multiplechoice': MultipleChoiceTemplate,
-            'memorycards': MemoryCardsTemplate
+            'memorycards': MemoryCardsTemplate,
+            'symmetry': SymmetryTemplate,
+            'cubecount': CubeCountTemplate,
+            'shapeconstructor': ShapeConstructorTemplate,
+            'projection': ProjectionTemplate,
+            'weightlab': WeightLabTemplate,
+            'storelab': StoreLabTemplate,
+            'bubblemerge': BubbleMergeTemplate,
+            'bridgebuilder': BridgeBuilderTemplate,
+            'groupmultiply': GroupMultiplyTemplate,
+            'sharedivide': ShareDivideTemplate,
+            'maze': MazeTemplate,
+            'counting': CountingTemplate,
+            'visualmemory': VisualMemoryTemplate
         };
 
         this.nextLevelBtn.style.display = 'none'; // Hide next button
@@ -49,16 +62,31 @@ class TaskRunner {
         }
     }
 
-    onSuccess() {
+    onSuccess(anchorEl) {
         // Trigger Victory
         SFX.playWin(); // Winner sound
-        Confetti.launch(); // Launch confetti animation
+
+        // Get coordinates for burst if element provided, else use screen center
+        let burstX = window.innerWidth / 2;
+        let burstY = window.innerHeight / 2;
+
+        if (anchorEl && anchorEl instanceof HTMLElement) {
+            const rect = anchorEl.getBoundingClientRect();
+            burstX = rect.left + rect.width / 2;
+            burstY = rect.top + rect.height / 2;
+        }
+
+        Confetti.burst(burstX, burstY); // Localized burst
+        Confetti.launch(); // Global falling confetti
+
         this.victoryOverlay.classList.remove('hidden');
 
         // Automatic progression after 2 seconds
         setTimeout(() => {
             this.victoryOverlay.classList.add('hidden');
-            document.dispatchEvent(new Event('task-complete'));
+            document.dispatchEvent(new CustomEvent('task-complete', {
+                detail: { burstX, burstY }
+            }));
         }, 2000);
     }
 
@@ -68,7 +96,8 @@ class TaskRunner {
         this.gameStage.classList.add('shake-anim');
         setTimeout(() => this.gameStage.classList.remove('shake-anim'), 500);
 
-        // Avatar sad face logic could go here
+        // Notify app for mascot reaction
+        document.dispatchEvent(new Event('task-fail'));
     }
 
     cleanup() {

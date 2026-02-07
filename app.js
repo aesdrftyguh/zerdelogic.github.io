@@ -57,16 +57,51 @@ class App {
 
     init() {
         this.renderDashboard();
-        this.backBtn.addEventListener('click', () => this.showDashboard());
+
+        // Sound toggle logic
+        this.soundBtn = document.getElementById('btn-toggle-sound');
+        this.soundIcon = document.getElementById('sound-icon');
+
+        const updateSoundUI = () => {
+            this.soundIcon.textContent = SFX.enabled ? '🔊' : '🔇';
+            this.soundBtn.style.opacity = SFX.enabled ? '1' : '0.6';
+        };
+        updateSoundUI();
+
+        this.soundBtn.addEventListener('click', () => {
+            const isEnabled = SFX.toggle();
+            updateSoundUI();
+            if (isEnabled) SFX.playClick();
+        });
+
+        this.backBtn.addEventListener('click', () => {
+            SFX.playClick();
+            this.showDashboard();
+        });
         this.backToMenuBtn.addEventListener('click', () => {
+            SFX.playClick();
             this.categoryCompleteOverlay.classList.add('hidden');
             this.showDashboard();
         });
 
+        // Global click listener for idle reset
+        document.addEventListener('mousedown', () => {
+            this.resetIdleTimer();
+        }, { once: false });
+
         // Sidebar Navigation
-        this.navTasks.addEventListener('click', () => this.showDashboard());
-        this.navStats.addEventListener('click', () => this.showStats());
-        this.navAwards.addEventListener('click', () => this.showAwards());
+        this.navTasks.addEventListener('click', () => {
+            SFX.playClick();
+            this.showDashboard();
+        });
+        this.navStats.addEventListener('click', () => {
+            SFX.playClick();
+            this.showStats();
+        });
+        this.navAwards.addEventListener('click', () => {
+            SFX.playClick();
+            this.showAwards();
+        });
 
         // Reset Stats Logic
         this.resetStatsBtn.addEventListener('click', () => {
@@ -76,9 +111,79 @@ class App {
         });
 
         // Listen for completion
-        document.addEventListener('task-complete', () => {
-            this.nextTask();
+        document.addEventListener('task-complete', (e) => {
+            this.handleTaskSuccess(e.detail);
         });
+
+        // Listen for failures
+        document.addEventListener('task-fail', () => {
+            this.handleTaskFail();
+        });
+    }
+
+    resetIdleTimer() {
+        if (this.idleTimer) clearTimeout(this.idleTimer);
+        if (this.mascotImg) {
+            this.mascotImg.classList.remove('thinking-anim');
+            if (this.mascotImg.textContent === '🧐') this.mascotImg.textContent = '🦊';
+        }
+
+        this.idleTimer = setTimeout(() => {
+            if (this.workspaceView.classList.contains('active')) {
+                if (this.mascotImg) {
+                    this.mascotImg.classList.add('thinking-anim');
+                    this.mascotImg.textContent = '🧐';
+                }
+            }
+        }, 10000); // 10 seconds idle
+    }
+
+    handleTaskSuccess(details) {
+        // Star burst from mascot or center
+        let burstX = window.innerWidth / 2;
+        let burstY = window.innerHeight / 2;
+
+        if (this.mascotImg) {
+            const rect = this.mascotImg.getBoundingClientRect();
+            burstX = rect.left + rect.width / 2;
+            burstY = rect.top + rect.height / 2;
+
+            // Mascot jump and celebrate
+            this.mascotImg.textContent = '🤩';
+            this.mascotImg.classList.add('happy-anim');
+
+            setTimeout(() => {
+                if (this.mascotImg) {
+                    this.mascotImg.classList.remove('happy-anim');
+                    this.mascotImg.textContent = '🦊';
+                }
+            }, 2000);
+        }
+
+        Confetti.burst(burstX, burstY);
+        this.nextTask();
+    }
+
+    handleTaskFail() {
+        this.mascotImg.textContent = '😟';
+        this.mascotImg.classList.add('shake-anim');
+        setTimeout(() => {
+            if (this.mascotImg) {
+                this.mascotImg.classList.remove('shake-anim');
+                this.mascotImg.textContent = '🦊';
+            }
+        }, 1000);
+
+        // Encouraging speech
+        const phrases = [
+            'Көмектесейін бе?',
+            'Қайтадан байқап көр!',
+            'Сенің қолыңнан келеді!',
+            'Мұқият бол!'
+        ];
+        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        this.mascotBubble.textContent = randomPhrase;
+        SFX.speak(randomPhrase);
     }
 
     resetAllStats() {

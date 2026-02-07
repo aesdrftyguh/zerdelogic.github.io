@@ -5,15 +5,15 @@ const SECTIONS = [
         icon: '🧠',
         color: '#8b5cf6', // Violet
         categories: [
-            { id: 'logic_patterns', title: 'Заңдылықтар', icon: '🔗', stars: 0, total: 5 },
-            { id: 'logic_odd_one', title: 'Артық затты тап', icon: '❌', stars: 0, total: 5 },
-            { id: 'logic_prediction', title: 'Жалғасын тап', icon: '🔮', stars: 0, total: 5 },
-            { id: 'logic_cause_effect', title: 'Себеп-салдар', icon: '⚡', stars: 0, total: 5 },
-            { id: 'logic_spatial', title: 'Кеңістіктік ойлау', icon: '📐', stars: 0, total: 5 },
-            { id: 'logic_classification', title: 'Жіктеу', icon: '📂', stars: 0, total: 5 },
-            { id: 'logic_sequence', title: 'Іс-әрекет реті', icon: '📋', stars: 0, total: 5 },
-            { id: 'logic_visual', title: 'Суретті логика', icon: '🖼️', stars: 0, total: 5 },
-            { id: 'logic_true_false', title: 'Шын немесе жалған', icon: '✅', stars: 0, total: 5 },
+            { id: 'logic_patterns', title: 'Заңдылықтар', icon: '🔗', stars: 0, total: 3 },
+            { id: 'logic_odd_one', title: 'Артық затты тап', icon: '❌', stars: 0, total: 3 },
+            { id: 'logic_prediction', title: 'Жалғасын тап', icon: '🔮', stars: 0, total: 3 },
+            { id: 'logic_cause_effect', title: 'Себеп-салдар', icon: '⚡', stars: 0, total: 3 },
+            { id: 'logic_spatial', title: 'Кеңістіктік ойлау', icon: '📐', stars: 0, total: 3 },
+            { id: 'logic_classification', title: 'Жіктеу', icon: '📂', stars: 0, total: 3 },
+            { id: 'logic_sequence', title: 'Іс-әрекет реті', icon: '📋', stars: 0, total: 3 },
+            { id: 'logic_visual', title: 'Суретті логика', icon: '🖼️', stars: 0, total: 3 },
+            { id: 'logic_true_false', title: 'Шын немесе жалған', icon: '✅', stars: 0, total: 3 },
         ]
     },
     {
@@ -22,15 +22,15 @@ const SECTIONS = [
         icon: '🔢',
         color: '#3b82f6', // Blue
         categories: [
-            { id: 'math_add_sub', title: 'Қосу және азайту', icon: '➕', stars: 0, total: 5 },
-            { id: 'math_compare', title: 'Сандарды салыстыру', icon: '⚖️', stars: 0, total: 5 },
-            { id: 'math_missing', title: 'Түсіп қалған сан', icon: '❓', stars: 0, total: 5 },
-            { id: 'math_multiply', title: 'Көбейту', icon: '✖️', stars: 0, total: 5 },
-            { id: 'math_divide', title: 'Бөлу', icon: '➗', stars: 0, total: 5 },
-            { id: 'math_word_problems', title: 'Мәтіндік есептер', icon: '📝', stars: 0, total: 5 },
-            { id: 'math_measurements', title: 'Шамалармен жұмыс', icon: '📏', stars: 0, total: 5 },
-            { id: 'math_geometry', title: 'Геометрия', icon: '🔺', stars: 0, total: 5 },
-            { id: 'math_logic', title: 'Математикалық логика', icon: '📊', stars: 0, total: 5 },
+            { id: 'math_add_sub', title: 'Қосу және азайту', icon: '➕', stars: 0, total: 3 },
+            { id: 'math_compare', title: 'Сандарды салыстыру', icon: '⚖️', stars: 0, total: 3 },
+            { id: 'math_missing', title: 'Түсіп қалған сан', icon: '❓', stars: 0, total: 3 },
+            { id: 'math_multiply', title: 'Көбейту', icon: '✖️', stars: 0, total: 3 },
+            { id: 'math_divide', title: 'Бөлу', icon: '➗', stars: 0, total: 3 },
+            { id: 'math_word_problems', title: 'Мәтіндік есептер', icon: '📝', stars: 0, total: 3 },
+            { id: 'math_measurements', title: 'Шамалармен жұмыс', icon: '📏', stars: 0, total: 3 },
+            { id: 'math_geometry', title: 'Геометрия', icon: '🔺', stars: 0, total: 3 },
+            { id: 'math_logic', title: 'Математикалық логика', icon: '📊', stars: 0, total: 3 },
         ]
     },
     {
@@ -46,8 +46,8 @@ const SECTIONS = [
             { id: 'attn_patterns', title: 'Визуалды өрнектер', icon: '🧩', stars: 0, total: 3 },
             { id: 'attn_concentration', title: 'Зейін қою', icon: '🧘', stars: 0, total: 3 },
             { id: 'attn_visual_memory', title: 'Көру жады', icon: '👁️', stars: 0, total: 3 },
-            { id: 'attn_maze', title: 'Лабиринттер', icon: '🌀', stars: 0, total: 5 },
-            { id: 'attn_count', title: 'Зейінді санау', icon: '⏱️', stars: 0, total: 5 },
+            { id: 'attn_maze', title: 'Лабиринттер', icon: '🌀', stars: 0, total: 3 },
+            { id: 'attn_count', title: 'Зейінді санау', icon: '⏱️', stars: 0, total: 3 },
         ]
     }
 ];
@@ -454,38 +454,35 @@ const TASKS = {
     'math_add_sub': [
         {
             id: 'math_as_01',
-            template: 'mathequation',
-            instruction: 'Қосу амалын орында!',
+            template: 'storelab',
+            instruction: 'Дүкенші: Себетке жиыны 10 тиын болатын заттарды сал!',
             content: {
-                operand1: { type: 'visual', value: '🍎', count: 2 },
-                operator: '+',
-                operand2: { type: 'visual', value: '🍎', count: 1 },
-                answer: 3,
-                options: [2, 3, 4]
+                target: 10,
+                items: [
+                    { id: 'apple', emoji: '🍎', price: 2 },
+                    { id: 'milk', emoji: '🥛', price: 5 },
+                    { id: 'bread', emoji: '🥖', price: 3 },
+                    { id: 'cheese', emoji: '🧀', price: 4 },
+                    { id: 'banana', emoji: '🍌', price: 1 }
+                ]
             }
         },
         {
             id: 'math_as_02',
-            template: 'mathequation',
-            instruction: 'Азайту амалын орында!',
+            template: 'bubblemerge',
+            instruction: 'Көпіршіктерді біріктір: Қосындысы 12 болатындай ет!',
             content: {
-                operand1: { type: 'visual', value: '🥕', count: 4 },
-                operator: '-',
-                operand2: { type: 'visual', value: '🥕', count: 1 },
-                answer: 3,
-                options: [2, 3, 5]
+                target: 12,
+                bubbles: [4, 5, 3, 7, 2, 8, 3]
             }
         },
         {
             id: 'math_as_03',
-            template: 'mathequation',
-            instruction: 'Есепті шығар!',
+            template: 'bridgebuilder',
+            instruction: 'Көпір құрастырушы: Өзеннен өту үшін ұзындығы 15 болатын жол сал!',
             content: {
-                operand1: { type: 'number', value: 5 },
-                operator: '+',
-                operand2: { type: 'number', value: 3 },
-                answer: 8,
-                options: [7, 8, 9]
+                width: 15,
+                blocks: [5, 3, 7, 2, 8, 5, 4]
             }
         }
     ],
@@ -555,6 +552,17 @@ const TASKS = {
     ],
     'math_multiply': [
         {
+            id: 'math_mult_interactive_01',
+            template: 'groupmultiply',
+            instruction: 'Көбейтуді үйрен: Әр себетке 2 жидектен сал!',
+            content: {
+                operand1: 3,
+                operand2: 2,
+                emoji: '🍓',
+                total: 6
+            }
+        },
+        {
             id: 'math_mult_01',
             template: 'mathequation',
             instruction: 'Көбейту амалын орында!',
@@ -567,31 +575,29 @@ const TASKS = {
             }
         },
         {
-            id: 'math_mult_02',
-            template: 'mathequation',
-            instruction: 'Беске көбейт!',
+            id: 'math_mult_interactive_02',
+            template: 'groupmultiply',
+            instruction: 'Топтарға бөл: Әр себетке 4 бананнан сал!',
             content: {
-                operand1: { type: 'number', value: 5 },
-                operator: '×',
-                operand2: { type: 'number', value: 2 },
-                answer: 10,
-                options: [7, 10, 15]
-            }
-        },
-        {
-            id: 'math_mult_03',
-            template: 'mathequation',
-            instruction: 'Көбейту кестесін білесің бе?',
-            content: {
-                operand1: { type: 'number', value: 3 },
-                operator: '×',
-                operand2: { type: 'number', value: 3 },
-                answer: 9,
-                options: [6, 9, 12]
+                operand1: 2,
+                operand2: 4,
+                emoji: '🍌',
+                total: 8
             }
         }
     ],
     'math_divide': [
+        {
+            id: 'math_div_interactive_01',
+            template: 'sharedivide',
+            instruction: 'Тең бөліс: 6 сәбізді екі қоянға тең бөл!',
+            content: {
+                total: 6,
+                divisor: 2,
+                emoji: '🥕',
+                answer: 3
+            }
+        },
         {
             id: 'math_div_01',
             template: 'mathequation',
@@ -605,27 +611,14 @@ const TASKS = {
             }
         },
         {
-            id: 'math_div_02',
-            template: 'mathequation',
-            instruction: 'Теңдей бөл!',
+            id: 'math_div_interactive_02',
+            template: 'sharedivide',
+            instruction: 'Бөлуді үйрен: 8 балықты төрт мысыққа (кейіпкерге) тең бөл!',
             content: {
-                operand1: { type: 'number', value: 10 },
-                operator: '÷',
-                operand2: { type: 'number', value: 5 },
-                answer: 2,
-                options: [2, 5, 10]
-            }
-        },
-        {
-            id: 'math_div_03',
-            template: 'mathequation',
-            instruction: 'ЕСЕПТІ ШЫҒАР!',
-            content: {
-                operand1: { type: 'number', value: 8 },
-                operator: '÷',
-                operand2: { type: 'number', value: 4 },
-                answer: 2,
-                options: [2, 4, 8]
+                total: 8,
+                divisor: 4,
+                emoji: '🐟',
+                answer: 2
             }
         }
     ],
@@ -676,126 +669,142 @@ const TASKS = {
     'math_measurements': [
         {
             id: 'math_meas_01',
-            template: 'multiplechoice',
-            instruction: 'Сағат неше болды?',
+            template: 'weightlab',
+            instruction: 'Салмақты сезін: Ең АУЫР затты тап және ортаға қой!',
             content: {
-                question: 'Сағат тілі 3-ті көрсетіп тұр.',
-                image: '🕒',
-                options: [
-                    { content: '3:00', correct: true },
-                    { content: '12:00', correct: false },
-                    { content: '6:00', correct: false }
-                ]
+                objects: [
+                    { id: 'feather', emoji: '🪶', weight: 1 },
+                    { id: 'stone', emoji: '🪨', weight: 10 },
+                    { id: 'apple', emoji: '🍎', weight: 3 }
+                ],
+                targetWeight: 10
             }
         },
         {
             id: 'math_meas_02',
-            template: 'multiplechoice',
-            instruction: 'Қайсысы ауыр?',
+            template: 'weightlab',
+            instruction: 'Салмақты сезін: Ең ЖЕҢІЛ затты тап және ортаға қой!',
             content: {
-                question: 'Піл ауыр ма, әлде құмырсқа ма?',
-                image: '🐘🐜',
-                options: [
-                    { content: 'Піл 🐘', correct: true },
-                    { content: 'Құмырсқа 🐜', correct: false }
-                ]
+                objects: [
+                    { id: 'balloon', emoji: '🎈', weight: 1 },
+                    { id: 'car', emoji: '🚗', weight: 10 },
+                    { id: 'cat', emoji: '🐱', weight: 4 }
+                ],
+                targetWeight: 1
             }
         },
         {
             id: 'math_meas_03',
             template: 'multiplechoice',
-            instruction: 'Қайсысы ұзын?',
+            instruction: 'Шамаларды салыстыр: Қайсысы ұзын?',
             content: {
-                question: 'Қалам ұзын ба, әлде сызғыш па?',
-                image: '✏️📏',
+                question: 'Ең ұзын жануарды тап!',
+                image: '🐍🐛',
                 options: [
-                    { content: 'Сызғыш 📏', correct: true },
-                    { content: 'Қалам ✏️', correct: false }
+                    { content: 'Жылан 🐍', correct: true },
+                    { content: 'Құрт 🐛', correct: false }
                 ]
             }
         }
     ],
     'math_geometry': [
         {
-            id: 'math_geo_01',
-            template: 'multiplechoice',
-            instruction: 'Құрастыр!',
+            id: 'geo_symmetry_01',
+            template: 'symmetry',
+            instruction: 'Симметрия: Оң жақтағы торды сол жақтағыдай етіп боя (айнадағыдай)',
             content: {
-                question: 'Екі үшбұрышты қосқанда қандай фигура шығуы мүмкін?',
-                image: '🔺 ➕ 🔺',
-                options: [
-                    { content: '🔶', correct: true }, // Rhombus/Square
-                    { content: '🔵', correct: false },
-                    { content: '⬛', correct: false }
+                size: 5,
+                pattern: [
+                    [1, 1, 1, 0, 0],
+                    [0, 0, 1, 0, 0],
+                    [0, 0, 1, 1, 0],
+                    [0, 0, 1, 0, 0],
+                    [1, 1, 1, 0, 0]
+                ],
+                target: [
+                    [0, 0, 1, 1, 1],
+                    [0, 0, 1, 0, 0],
+                    [0, 1, 1, 0, 0],
+                    [0, 0, 1, 0, 0],
+                    [0, 0, 1, 1, 1]
                 ]
             }
         },
         {
-            id: 'math_geo_02',
-            template: 'multiplechoice',
-            instruction: 'Көлемді пішіндер',
+            id: 'geo_cubes_01',
+            template: 'cubecount',
+            instruction: 'Зейін қой: Суретте барлығы неше текше (кубик) бар?',
             content: {
-                question: 'Цилиндр пішінді затты тап:',
-                options: [
-                    { content: '🛢️', correct: true },
-                    { content: '📦', correct: false },
-                    { content: '🏀', correct: false }
-                ]
+                layout: [
+                    [2, 1],
+                    [1, 1]
+                ],
+                answer: 5,
+                options: [4, 5, 6]
             }
         },
         {
-            id: 'math_geo_03',
-            template: 'multiplechoice',
-            instruction: 'Қабырғаларды сана!',
+            id: 'geo_construct_01',
+            template: 'shapeconstructor',
+            instruction: 'Пішін құрастырушы: Фигуралардан үй сал!',
             content: {
-                question: 'Алтыбұрыштың (гексагон) неше қабырғасы бар?',
-                image: '🛑', // Stop sign is octagon usually, but close enough visually for abstraction or just use text
-                options: [
-                    { content: '6', correct: true },
-                    { content: '5', correct: false },
-                    { content: '8', correct: false }
+                blueprint: {
+                    width: '350px',
+                    height: '400px',
+                    slots: [
+                        { id: 'roof', shape: 'triangle', x: '75px', y: '50px', size: '200px' },
+                        { id: 'body', shape: 'square', x: '100px', y: '250px', size: '150px' },
+                        { id: 'window', shape: 'circle', x: '150px', y: '280px', size: '50px' }
+                    ]
+                },
+                parts: [
+                    { id: 'p1', shape: 'triangle', color: '#ef4444' },
+                    { id: 'p2', shape: 'square', color: '#f59e0b' },
+                    { id: 'p3', shape: 'circle', color: '#3b82f6' }
                 ]
             }
         }
     ],
     'math_logic': [
         {
-            id: 'math_log_01',
+            id: 'math_log_puzzle_01',
             template: 'multiplechoice',
-            instruction: 'Логикалық сұрақ',
+            instruction: 'Логикалық жұмбақ: Жемістердің мәнін тап! 🍎',
             content: {
-                question: 'Бүгін дүйсенбі болса, ертең қандай күн?',
-                image: '📅',
+                question: '🍎 + 🍎 = 10\n🍎 + 🍌 + 🍌 = 16\n🍎 + 🍌 = ?',
+                image: '🍎🍌',
                 options: [
-                    { content: 'Сейсенбі', correct: true },
-                    { content: 'Жексенбі', correct: false }
-                ]
-            }
-        },
-        {
-            id: 'math_log_02',
-            template: 'multiplechoice',
-            instruction: 'Сандар қатары',
-            content: {
-                question: '2, 4, 6, ... Келесі сан қандай?',
-                image: '🔢',
-                options: [
-                    { content: '7', correct: false },
                     { content: '8', correct: true },
-                    { content: '9', correct: false }
+                    { content: '9', correct: false },
+                    { content: '10', correct: false }
                 ]
             }
         },
         {
-            id: 'math_log_03',
+            id: 'math_log_puzzle_02',
             template: 'multiplechoice',
-            instruction: 'Тақ санды тап!',
+            instruction: 'Логикалық жұмбақ: Жануарларды есепте! 🐼',
             content: {
-                question: 'Қайсысы тақ сан?',
+                question: '🐼 + 🐼 + 🐼 = 30\n🐼 + 🦊 + 🦊 = 20\n🦊 + 🐰 + 🐰 = 9\n🐼 + 🦊 + 🐰 = ?',
+                image: '🐼🦊🐰',
                 options: [
-                    { content: '2', correct: false },
-                    { content: '5', correct: true },
-                    { content: '4', correct: false }
+                    { content: '15', correct: false },
+                    { content: '17', correct: true },
+                    { content: '20', correct: false }
+                ]
+            }
+        },
+        {
+            id: 'math_log_puzzle_03',
+            template: 'multiplechoice',
+            instruction: 'Геометриялық логика: Фигуралар жүйесі 🔺',
+            content: {
+                question: '🔺 + 🔺 = 6\n🟩 + 🟩 + 🟩 = 12\n🛑 + 🛑 = 10\n🔺 + 🟩 + 🛑 = ?',
+                image: '📐💎',
+                options: [
+                    { content: '12', correct: true },
+                    { content: '10', correct: false },
+                    { content: '15', correct: false }
                 ]
             }
         }
@@ -863,7 +872,7 @@ const TASKS = {
             content: {
                 sequence: ['🐱', '🐶', null, '🐹'],
                 options: ['🐰', '🐵', '🦊'],
-                correct: '🐰' // MathMissing assumes numbers usually, but text works if CSS fits. We might need to adjust CSS font size if emojis are huge.
+                correct: '🐰'
             }
         },
         {
@@ -916,7 +925,7 @@ const TASKS = {
             instruction: 'Қоянға сәбізге жетуге көмектес!',
             content: {
                 question: 'Қай жол дұрыс?',
-                image: '🐰 ➡️ 🥕', // Placeholder for maze image. In real app, use <img> tag or complex ASCII
+                image: '🐰 ➡️ 🥕',
                 options: [
                     { content: 'Жол 1', correct: true },
                     { content: 'Жол 2', correct: false }
@@ -960,7 +969,7 @@ const TASKS = {
             template: 'memorycards',
             instruction: 'Жұптарды тап: Бірдей суреттерді есте сақта!',
             content: {
-                pairs: ['🦊', '🐻', '🐰', '🦁']
+                pairs: [' Foxes', ' Bears', ' Bunnies', ' Lions']
             }
         },
         // 2. Spatial Rotation - Find the rotated shape
@@ -1006,9 +1015,9 @@ const TASKS = {
             instruction: 'Көлеңкесін тап: Кімнің көлеңкесі?',
             content: {
                 pairs: [
-                    { id: 'p1', left: { content: '🐰' }, right: { content: '👤' } }, // Rabbit -> Shadow (use silhouette if possible, but emojis work)
-                    { id: 'p2', left: { content: '🌵' }, right: { content: '⬛' } }, // Cactus -> Block (abstract shadow)
-                    { id: 'p3', left: { content: '✈️' }, right: { content: '➕' } }  // Plane -> Cross shape
+                    { id: 'p1', left: { content: '🐰' }, right: { content: '👤' } },
+                    { id: 'p2', left: { content: '🌵' }, right: { content: '⬛' } },
+                    { id: 'p3', left: { content: '✈️' }, right: { content: '➕' } }
                 ]
             }
         },
@@ -1019,9 +1028,9 @@ const TASKS = {
             instruction: 'Ізін тап: Бұл кімнің ізі?',
             content: {
                 pairs: [
-                    { id: 'p1', left: { content: '🐾' }, right: { content: '🐶' } }, // Paw -> Dog
-                    { id: 'p2', left: { content: '👣' }, right: { content: '👶' } }, // Footprint -> Baby
-                    { id: 'p3', left: { content: '👠' }, right: { content: '💃' } }  // Heel -> Dancer
+                    { id: 'p1', left: { content: '🐾' }, right: { content: '🐶' } },
+                    { id: 'p2', left: { content: '👣' }, right: { content: '👶' } },
+                    { id: 'p3', left: { content: '👠' }, right: { content: '💃' } }
                 ]
             }
         },
@@ -1031,11 +1040,11 @@ const TASKS = {
             template: 'spatial',
             instruction: 'Судағы бейне: Қайсысы дұрыс?',
             content: {
-                original: '🌳', // Tree
+                original: '🌳',
                 options: [
-                    { content: '🌳', correct: false }, // Same
-                    { content: '🌳', correct: true, transform: 'rotate(180deg) scaleX(-1)' }, // Reflected in water (Upside down + mirrored)
-                    { content: '🌵', correct: false } // Wrong object
+                    { content: '🌳', correct: false },
+                    { content: '🌳', correct: true, transform: 'rotate(180deg) scaleX(-1)' },
+                    { content: '🌵', correct: false }
                 ]
             }
         }
@@ -1047,10 +1056,10 @@ const TASKS = {
             template: 'multiplechoice',
             instruction: 'Мұқият қара: Суретте не жоқ?',
             content: {
-                question: '🍎 🍌 🍇 🍓', // Apple, Banana, Grapes, Strawberry
+                question: '🍎 🍌 🍇 🍓',
                 options: [
                     { content: '🍎', correct: false },
-                    { content: '🍊', correct: true }, // Orange is MISSING!
+                    { content: '🍊', correct: true },
                     { content: '🍇', correct: false }
                 ]
             }
@@ -1062,9 +1071,9 @@ const TASKS = {
             instruction: 'Жасырынбақ: Кім тығылып қалды?',
             content: {
                 pairs: [
-                    { id: 'p1', left: { content: '🌳🐰' }, right: { content: '🐰' } }, // Bush+Ears -> Rabbit
-                    { id: 'p2', left: { content: '🌊🦈' }, right: { content: '🦈' } }, // Water+Fin -> Shark
-                    { id: 'p3', left: { content: '🏠🐈' }, right: { content: '🐈' } }  // House+Tail -> Cat
+                    { id: 'p1', left: { content: '🌳🐰' }, right: { content: '🐰' } },
+                    { id: 'p2', left: { content: '🌊🦈' }, right: { content: '🦈' } },
+                    { id: 'p3', left: { content: '🏠🐈' }, right: { content: '🐈' } }
                 ]
             }
         },
@@ -1075,9 +1084,9 @@ const TASKS = {
             instruction: 'Бөлшегін тап: Қай бөлік жетіспейді?',
             content: {
                 pairs: [
-                    { id: 'p1', left: { content: '🍕' }, right: { content: '🍰' } }, // Pizza -> Slice (using cake slice emoji as pizza slice visually)
-                    { id: 'p2', left: { content: '🧩' }, right: { content: '🟦' } }, // Puzzle -> Piece
-                    { id: 'p3', left: { content: '🚗' }, right: { content: '🛞' } }  // Car -> Wheel
+                    { id: 'p1', left: { content: '🍕' }, right: { content: '🍰' } },
+                    { id: 'p2', left: { content: '🧩' }, right: { content: '🟦' } },
+                    { id: 'p3', left: { content: '🚗' }, right: { content: '🛞' } }
                 ]
             }
         }
@@ -1092,7 +1101,7 @@ const TASKS = {
                 items: [
                     { content: '🟡', isOdd: false },
                     { content: '🟡', isOdd: false },
-                    { content: '🟨', isOdd: true }, // Square - breaks "Round" rule
+                    { content: '🟨', isOdd: true },
                     { content: '🟡', isOdd: false },
                     { content: '🟡', isOdd: false },
                     { content: '🟡', isOdd: false }
@@ -1103,18 +1112,18 @@ const TASKS = {
         {
             id: 'cond_02',
             template: 'classification',
-            instruction: 'Тап: 3 бұрыштан КӨП бұрышы бар фигуралар', // >3 corners
+            instruction: 'Тап: 3 бұрыштан КӨП бұрышы бар фигуралар',
             content: {
                 categories: [
                     { id: 'yes', label: 'ДҰРЫС ✅', color: '#22c55e' },
                     { id: 'no', label: 'БҰРЫС ❌', color: '#ef4444' }
                 ],
                 items: [
-                    { id: 'i1', content: '🟩', category: 'yes' }, // Square (4)
-                    { id: 'i2', content: '🔺', category: 'no' }, // Triangle (3)
-                    { id: 'i3', content: '⭐', category: 'yes' }, // Star (10)
-                    { id: 'i4', content: '⏺️', category: 'no' }, // Circle (0)
-                    { id: 'i5', content: '🔷', category: 'yes' }  // Diamond (4)
+                    { id: 'i1', content: '🟩', category: 'yes' },
+                    { id: 'i2', content: '🔺', category: 'no' },
+                    { id: 'i3', content: '⭐', category: 'yes' },
+                    { id: 'i4', content: '⏺️', category: 'no' },
+                    { id: 'i5', content: '🔷', category: 'yes' }
                 ]
             }
         },
@@ -1129,11 +1138,11 @@ const TASKS = {
                     { id: 'trash', label: 'КЕРЕК ЕМЕС 🗑️', color: '#94a3b8' }
                 ],
                 items: [
-                    { id: 'i1', content: '📘', category: 'target' }, // Blue Book (Yes)
-                    { id: 'i2', content: '🚙', category: 'trash' }, // Blue Car (No - is car)
-                    { id: 'i3', content: '🧢', category: 'target' }, // Blue Cap (Yes)
-                    { id: 'i4', content: '🍎', category: 'trash' }, // Red Apple (No - color)
-                    { id: 'i5', content: '🖌️', category: 'trash' }  // Not blue
+                    { id: 'i1', content: '📘', category: 'target' },
+                    { id: 'i2', content: '🚙', category: 'trash' },
+                    { id: 'i3', content: '🧢', category: 'target' },
+                    { id: 'i4', content: '🍎', category: 'trash' },
+                    { id: 'i5', content: '🖌️', category: 'trash' }
                 ]
             }
         }
@@ -1207,10 +1216,101 @@ const TASKS = {
                     { content: '🙂', isOdd: false },
                     { content: '🙂', isOdd: false },
                     { content: '🙂', isOdd: false },
-                    { content: '🙃', isOdd: true }, // Upside down
+                    { content: '🙃', isOdd: true },
                     { content: '🙂', isOdd: false },
                     { content: '🙂', isOdd: false }
                 ]
+            }
+        }
+    ],
+    'attn_visual_memory': [
+        {
+            id: 'vmem_01',
+            template: 'visualmemory',
+            instruction: 'Есте сақта: Мына заттар қайда болды?',
+            content: {
+                items: ['🍎', '🍌', '🍇', '🍒'],
+                target: '🍎'
+            }
+        },
+        {
+            id: 'vmem_02',
+            template: 'visualmemory',
+            instruction: 'Мұқият қара: Көлік қайда жасырылды?',
+            content: {
+                items: ['🚗', '✈️', '🚢', '🚀'],
+                target: '🚗'
+            }
+        },
+        {
+            id: 'vmem_03',
+            template: 'visualmemory',
+            instruction: 'Есте сақта: Аюдың орнын тап!',
+            content: {
+                items: ['🐻', '🦁', '🐯', '🐘'],
+                target: '🐻'
+            }
+        }
+    ],
+    'attn_maze': [
+        {
+            id: 'maze_01',
+            template: 'maze',
+            instruction: 'Лабиринт: Мысыққа балыққа жетуге көмектес!',
+            content: {
+                grid: [
+                    [0, 1, 0, 0],
+                    [0, 0, 0, 1],
+                    [1, 1, 0, 0]
+                ],
+                start: [0, 0],
+                end: [0, 3],
+                emoji: '🐱',
+                target: '🐟'
+            }
+        },
+        {
+            id: 'maze_02',
+            template: 'maze',
+            instruction: 'Жолды тап: Қоян сәбізге баруы керек!',
+            content: {
+                grid: [
+                    [0, 0, 1, 0],
+                    [1, 0, 0, 0],
+                    [0, 1, 1, 0]
+                ],
+                start: [0, 0],
+                end: [2, 3],
+                emoji: '🐰',
+                target: '🥕'
+            }
+        }
+    ],
+    'attn_count': [
+        {
+            id: 'count_01',
+            template: 'counting',
+            instruction: 'Санап үйрен: Суретте неше үйрек бар?',
+            content: {
+                items: [
+                    { emoji: '🦆', count: 4 },
+                    { emoji: '🐸', count: 2 }
+                ],
+                targetEmoji: '🦆',
+                answer: 4
+            }
+        },
+        {
+            id: 'count_02',
+            template: 'counting',
+            instruction: 'Зейін қой: Неше жұлдыз көріп тұрсың?',
+            content: {
+                items: [
+                    { emoji: '⭐', count: 7 },
+                    { emoji: '🌙', count: 3 }
+                ],
+                targetEmoji: '⭐',
+                answer: 7
             }
         }
     ]
