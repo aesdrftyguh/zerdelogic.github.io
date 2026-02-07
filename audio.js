@@ -67,12 +67,18 @@ class AudioManager {
         this.synth.cancel();
 
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'kk-KZ'; // Kazakh
-        utterance.rate = 0.9; // Slightly slower for kids
-        utterance.pitch = 1.1; // Cheerful pitch
 
-        // Fallback to basic voice if Kazakh not found, though most modern browsers handle it or default
-        this.synth.speak(utterance);
+        // Find best Kazakh voice
+        const voices = this.synth.getVoices();
+        const kkVoice = voices.find(v => v.lang.startsWith('kk'));
+        if (kkVoice) utterance.voice = kkVoice;
+
+        utterance.lang = 'kk-KZ';
+        utterance.rate = 0.85;
+        utterance.pitch = 1.0;
+
+        // Small timeout helps mobile browsers prep the synth
+        setTimeout(() => this.synth.speak(utterance), 100);
     }
 }
 
