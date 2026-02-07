@@ -9,17 +9,10 @@ class SpatialTemplate {
     }
 
     render() {
-        this.container.style.width = '100%';
-        this.container.style.height = '100%';
-        this.container.style.display = 'flex';
-        this.container.style.flexDirection = 'column';
-        this.container.style.justifyContent = 'center';
-        this.container.style.alignItems = 'center';
-        this.container.style.gap = '80px';
-        this.container.style.padding = '40px';
+        this.container.classList.add('task-spatial-container');
 
-        const ITEM_SIZE = '160px';
-        const ITEM_FONT = '7rem';
+        const ITEM_SIZE = 'clamp(100px, 20vw, 160px)';
+        const ITEM_FONT = 'clamp(4rem, 10vw, 7rem)';
 
         // Original item with label
         const originalSection = document.createElement('div');
@@ -44,8 +37,8 @@ class SpatialTemplate {
         originalItem.style.alignItems = 'center';
         originalItem.style.fontSize = ITEM_FONT;
         originalItem.style.borderRadius = '30px';
-        originalItem.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-        originalItem.style.boxShadow = '0 15px 40px rgba(102, 126, 234, 0.4)';
+        originalItem.style.background = 'var(--primary-gradient)';
+        originalItem.style.boxShadow = '0 15px 40px rgba(245, 158, 11, 0.4)';
         originalItem.style.border = '5px solid #ffffff';
         originalItem.style.color = '#ffffff';
 
@@ -60,13 +53,7 @@ class SpatialTemplate {
         optionsLabel.style.color = '#64748b';
 
         const optionsRow = document.createElement('div');
-        optionsRow.style.display = 'flex';
-        optionsRow.style.gap = '30px';
-        optionsRow.style.justifyContent = 'center';
-        optionsRow.style.padding = '30px';
-        optionsRow.style.background = 'rgba(255, 255, 255, 0.4)';
-        optionsRow.style.borderRadius = '30px';
-        optionsRow.style.backdropFilter = 'blur(10px)';
+        optionsRow.classList.add('spatial-options-row');
 
         this.content.options.forEach((opt, index) => {
             const itemEl = document.createElement('div');

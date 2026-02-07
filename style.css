@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary-color: #f59e0b;
     /* Amber */
     --primary-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
@@ -534,7 +534,7 @@ body {
 }
 
 .award-card.locked .award-icon::after {
-    content: '🔒';
+    content: 'рџ”’';
     position: absolute;
     font-size: 1.2rem;
     bottom: -5px;
@@ -608,30 +608,223 @@ body {
 .award-card:not(.locked) .award-progress-fill {
     background: linear-gradient(90deg, #fbbf24, #f59e0b);
 }
+
+/* Task Specific Base Styles */
+.task-spatial-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 20px;
+}
+
+.spatial-options-row {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.store-shelf {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.store-counter-area {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 20px;
+}
+
 /* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
-    body, #app { flex-direction: column-reverse; }
-    .sidebar {
-        width: 100% !important; height: 70px !important;
-        flex-direction: row !important; padding: 0 20px !important;
-        justify-content: space-around !important; border-radius: 24px 24px 0 0 !important;
-        box-shadow: 0 -5px 15px rgba(0,0,0,0.05) !important;
+
+    body,
+    #app {
+        display: flex !important;
+        flex-direction: column-reverse !important;
     }
-    .sidebar-logo { display: none !important; }
-    .nav-menu { flex-direction: row !important; width: 100% !important; justify-content: space-around !important; gap: 0 !important; }
-    .nav-item { width: 60px !important; height: 50px !important; }
-    .main-content { height: calc(100vh - 70px) !important; }
-    .view { padding: 10px 15px !important; }
-    .hero-banner { padding: 15px !important; margin-bottom: 20px !important; flex-direction: column !important; gap: 10px !important; }
-    .hero-text h1 { font-size: 1.3rem !important; }
-    .grid-container { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; padding: 0 5px !important; max-width: none !important; }
-    .section-title { font-size: 1.3rem !important; }
-    .card-icon { font-size: 2.22rem !important; }
-    #workspace { padding: 0 !important; }
-    .task-container { border-radius: 0 !important; max-width: none !important; height: 100% !important; border: none !important; min-height: 0 !important; }
-    .mascot-helper { padding: 10px 15px !important; min-height: 70px !important; }
-    .mascot-helper #mascot-img { font-size: 2.5rem !important; }
-    .bubble { font-size: 0.85rem !important; }
-    .stats-cards-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
-    .awards-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+
+    .sidebar {
+        width: 100% !important;
+        height: 65px !important;
+        flex-direction: row !important;
+        padding: 0 10px !important;
+        justify-content: space-around !important;
+        border-radius: 20px 20px 0 0 !important;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05) !important;
+        position: relative !important;
+    }
+
+    .sidebar-logo {
+        display: none !important;
+    }
+
+    .nav-menu {
+        flex-direction: row !important;
+        width: 100% !important;
+        justify-content: space-around !important;
+        gap: 0 !important;
+    }
+
+    .nav-item {
+        width: 50px !important;
+        height: 45px !important;
+        font-size: 1.2rem !important;
+    }
+
+    .main-content {
+        height: calc(100vh - 65px) !important;
+        width: 100% !important;
+    }
+
+    .view {
+        padding: 10px !important;
+        width: 100% !important;
+    }
+
+    /* Hero Banner / Header */
+    .hero-banner {
+        padding: 15px !important;
+        margin-bottom: 20px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 15px !important;
+    }
+
+    .hero-text h1 {
+        font-size: 1.4rem !important;
+    }
+
+    .hero-text p {
+        font-size: 0.85rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    .user-stats-row {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+
+    .stat-badge {
+        padding: 6px 12px !important;
+        font-size: 0.8rem !important;
+        border-radius: 12px !important;
+    }
+
+    /* Chapter/Section Headers */
+    .section-header {
+        flex-direction: column !important;
+        margin-bottom: 30px !important;
+        gap: 10px !important;
+    }
+
+    .section-title {
+        font-size: 1.4rem !important;
+        text-align: center !important;
+    }
+
+    /* Category Grid */
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 0 5px !important;
+        max-width: none !important;
+    }
+
+    .category-card {
+        padding: 12px !important;
+    }
+
+    .card-icon {
+        font-size: 2.22rem !important;
+    }
+
+    .card-title {
+        font-size: 0.8rem !important;
+    }
+
+    /* Workspace / Game View */
+    #workspace {
+        padding: 0 !important;
+    }
+
+    .task-container {
+        border-radius: 0 !important;
+        max-width: none !important;
+        height: 100% !important;
+        border: none !important;
+        min-height: 0 !important;
+    }
+
+    .task-header {
+        padding: 10px 15px !important;
+    }
+
+    .game-stage {
+        padding: 10px !important;
+    }
+
+    /* Mascot Elements - Move to bottom right on mobile game */
+    .mascot-helper {
+        position: fixed !important;
+        bottom: 75px !important;
+        /* Above bottom nav */
+        left: 5px !important;
+        width: auto !important;
+        min-height: 0 !important;
+        padding: 5px !important;
+        background: transparent !important;
+        pointer-events: none !important;
+    }
+
+    .mascot-helper #mascot-img {
+        font-size: 2.5rem !important;
+    }
+
+    .bubble {
+        width: 130px !important;
+        font-size: 0.75rem !important;
+        padding: 8px !important;
+        pointer-events: auto !important;
+    }
+
+    /* Victory Cards */
+    .victory-card {
+        width: 90% !important;
+        padding: 20px !important;
+    }
+
+    .victory-card h1 {
+        font-size: 1.8rem !important;
+    
+    /* Task Specific Mobile Overrides */
+    .task-spatial-container { gap: 20px !important; padding: 10px !important; }
+    .spatial-options-row { gap: 10px !important; padding: 10px !important; flex-wrap: wrap !important; }
+    .store-shelf { gap: 8px !important; padding: 10px !important; }
+    .store-item { width: 70px !important; height: 95px !important; }
+    .store-item div:first-child { font-size: 1.8rem !important; }
+    .basket-zone { height: 130px !important; padding: 10px !important; }
+    #basket-total { font-size: 1.3rem !important; padding: 10px 20px !important; }
 }
+

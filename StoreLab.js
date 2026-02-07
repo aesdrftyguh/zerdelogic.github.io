@@ -21,21 +21,14 @@ class StoreLabTemplate {
         const header = document.createElement('div');
         header.style.textAlign = 'center';
         header.innerHTML = `
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px;">
-                Дүкенші: Маған тура <span style="color: #8b5cf6; font-size: 2rem;">${this.content.target} тиындық</span> зат беріңіз!
+            <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 5px;">
+                Дүкенші: Маған тура <span style="color: var(--primary-color); font-size: 1.8rem;">${this.content.target} тиындық</span> зат беріңіз!
             </div>
         `;
 
         // 2. Shelf (Source)
         const shelf = document.createElement('div');
-        shelf.style.display = 'flex';
-        shelf.style.flexWrap = 'wrap';
-        shelf.style.justifyContent = 'center';
-        shelf.style.gap = '15px';
-        shelf.style.padding = '20px';
-        shelf.style.background = 'rgba(255, 255, 255, 0.4)';
-        shelf.style.borderRadius = '30px';
-        shelf.style.border = '2px solid rgba(255,255,255,0.8)';
+        shelf.classList.add('store-shelf');
 
         this.content.items.forEach(itemData => {
             const item = document.createElement('div');
@@ -65,13 +58,7 @@ class StoreLabTemplate {
 
         // 3. Counter Area
         const counterArea = document.createElement('div');
-        counterArea.style.flex = '1.2';
-        counterArea.style.display = 'flex';
-        counterArea.style.flexDirection = 'column';
-        counterArea.style.alignItems = 'center';
-        counterArea.style.justifyContent = 'center';
-        counterArea.style.position = 'relative';
-        counterArea.style.gap = '20px';
+        counterArea.classList.add('store-counter-area');
 
         const basket = document.createElement('div');
         basket.className = 'basket-zone glass-panel';
